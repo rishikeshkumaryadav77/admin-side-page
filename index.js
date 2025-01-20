@@ -1,6 +1,6 @@
 //fecthing data
 async function fetchData() {
-  let url = await fetch("http://localhost:3000/product");
+  let url = await fetch("https://tortoiseshell-lime-town.glitch.me/product");
   try {
     if (!url.ok) {
       throw new Error(url.statusText);
@@ -61,7 +61,7 @@ function getData(data) {
       let con = confirm("Are u sure to delete the the data")
       if(con){
         div1.remove();
-        fetch(`http://localhost:3000/product/${element.id}`, { method: "DELETE" });
+        fetch(`https://tortoiseshell-lime-town.glitch.me/product/${element.id}`, { method: "DELETE" });
       }else{
         return " "
       }
@@ -100,8 +100,8 @@ async function saveData() {
   // Determine request method (POST or PUT)
   let productMethod = InputId ? "PUT" : "POST";
   let URL = InputId
-    ? `http://localhost:3000/product/${InputId}`
-    : `http://localhost:3000/product/`;
+    ? `https://tortoiseshell-lime-town.glitch.me/product/${InputId}`
+    : `https://tortoiseshell-lime-town.glitch.me/product`;
 
   let response = await fetch(URL, {
     method: productMethod,
